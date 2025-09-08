@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Database Connected Successfully]]>
+    </line>
+    <line>
+      <![CDATA[Login Successful]]>
+    </line>
+    <line>
+      <![CDATA[Database Disconnected]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2025-09-08T19:51:01 IST" name="Default suite" finished-at="2025-09-08T19:51:42 IST" duration-ms="41419">
+    <groups>
+      <group name="Smoke">
+        <method signature="LoginPageScripts.login()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" name="login" class="LoginPageRunnableFiles.LoginPageScripts"/>
+        <method signature="LoginPageScripts.createEmployee()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" name="createEmployee" class="LoginPageRunnableFiles.LoginPageScripts"/>
+        <method signature="LoginPageScripts.searchCreatedEmployee()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" name="searchCreatedEmployee" class="LoginPageRunnableFiles.LoginPageScripts"/>
+      </group> <!-- Smoke -->
+    </groups>
+    <test started-at="2025-09-08T19:51:01 IST" name="Default test" finished-at="2025-09-08T19:51:42 IST" duration-ms="41419">
+      <class name="LoginPageRunnableFiles.LoginPageScripts">
+        <test-method is-config="true" signature="DatabaseConnection()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:01 IST" name="DatabaseConnection" finished-at="2025-09-08T19:51:01 IST" duration-ms="8" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Database Connected Successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- DatabaseConnection -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:01 IST" name="launchBrowser" finished-at="2025-09-08T19:51:06 IST" duration-ms="4766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="loginPage()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:06 IST" name="loginPage" finished-at="2025-09-08T19:51:08 IST" duration-ms="2459" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPage -->
+        <test-method signature="login()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:08 IST" name="login" finished-at="2025-09-08T19:51:08 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login Successful]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:08 IST" name="logout" finished-at="2025-09-08T19:51:12 IST" duration-ms="3297" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="loginPage()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:12 IST" name="loginPage" finished-at="2025-09-08T19:51:14 IST" duration-ms="1906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPage -->
+        <test-method signature="createEmployee()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:14 IST" name="createEmployee" finished-at="2025-09-08T19:51:24 IST" depends-on-methods="LoginPageRunnableFiles.LoginPageScripts.login" duration-ms="9897" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createEmployee -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:24 IST" name="logout" finished-at="2025-09-08T19:51:26 IST" duration-ms="2213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="loginPage()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:26 IST" name="loginPage" finished-at="2025-09-08T19:51:28 IST" duration-ms="2041" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPage -->
+        <test-method signature="searchCreatedEmployee()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:28 IST" name="searchCreatedEmployee" finished-at="2025-09-08T19:51:41 IST" depends-on-methods="LoginPageRunnableFiles.LoginPageScripts.createEmployee" duration-ms="13103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchCreatedEmployee -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:41 IST" name="logout" finished-at="2025-09-08T19:51:42 IST" duration-ms="1350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:42 IST" name="closeBrowser" finished-at="2025-09-08T19:51:42 IST" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="closeDBConnection()[pri:0, instance:LoginPageRunnableFiles.LoginPageScripts@7a8c8dcf]" started-at="2025-09-08T19:51:43 IST" name="closeDBConnection" finished-at="2025-09-08T19:51:43 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Database Disconnected]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- closeDBConnection -->
+      </class> <!-- LoginPageRunnableFiles.LoginPageScripts -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
