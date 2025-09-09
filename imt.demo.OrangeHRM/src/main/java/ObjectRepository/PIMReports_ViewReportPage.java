@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PIMReports_ViewReportPage_Locators {
+public class PIMReports_ViewReportPage {
 	
 	@FindBy(xpath = "//div[@class='orangehrm-paper-container']")
 	private WebElement employeeListTable;
@@ -28,7 +28,7 @@ public class PIMReports_ViewReportPage_Locators {
 	@FindBy(xpath = "//button[@class='oxd-pagination-page-item oxd-pagination-page-item--previous-next']//i[@class='oxd-icon bi-chevron-left']")
 	private WebElement goToPreviousPage;
 	
-	public PIMReports_ViewReportPage_Locators(WebDriver driver) {
+	public PIMReports_ViewReportPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 

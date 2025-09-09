@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PIMAddEmployye_PersonalDetailsPage_Locators {
+public class PIMAddEmployye_PersonalDetailsPage {
 	
 	@FindBy(xpath = "//div[@class='orangehrm-edit-employee']")
 	private WebElement PersonalDetailsPage;
@@ -73,8 +73,135 @@ public class PIMAddEmployye_PersonalDetailsPage_Locators {
 	@FindBy(xpath = "//label[.='Date of Birth']/parent::div/following-sibling::div//input[@placeholder='mm-dd-yyyy']")
 	private WebElement enterDateOfBirth;
 	
-	public PIMAddEmployye_PersonalDetailsPage_Locators(WebDriver driver) {
+	@FindBy(xpath = "//label[.='Nationality']/parent::div/following-sibling::div//div[text()='-- Select --']")
+	private WebElement nationalityDropdown;
+	
+	@FindBy(xpath = "//label[.='Marital Status']/parent::div/following-sibling::div//div[text()='-- Select --']")
+	private WebElement martialStatusDropdown;
+	
+	@FindBy(xpath = "//label[.='Male']")
+	private WebElement genderMaleRadioButton;
+	
+	@FindBy(xpath = "//label[.='Female']")
+	private WebElement genderFemaleRadioButton;
+	
+	@FindBy(xpath = "//p[.=' * Required']/following-sibling::button[.=' Save ']")
+	private WebElement savePersonalDetailsButton;
+	
+	@FindBy(xpath = "//label[.='Blood Type']/parent::div/following-sibling::div//div[text()='-- Select --']")
+	private WebElement bloodTypeDropdown;
+	
+	@FindBy(xpath = "//label[.='Test_Field']")
+	private WebElement testFieldTextBox;
+	
+	@FindBy(xpath = "//h6[.='Custom Fields']/following-sibling::form/descendant::div[@class='oxd-form-actions']/child::button")
+	private WebElement saveCustomFieldsButton;
+	
+	@FindBy(xpath = "//button[.=' Add ']")
+	private WebElement addDocumentsButton;
+	
+	@FindBy(linkText = "Contact Details")
+	private WebElement contactDetailsMenuButton;
+	
+	@FindBy(linkText = "Emergency Contacts")
+	private WebElement EmergencyContactMenuButton;
+	
+	@FindBy(linkText = "Dependents")
+	private WebElement dependentsMenuButton;
+	
+	@FindBy(linkText = "Immigration")
+	private WebElement immigrationMenuButton;
+	
+	@FindBy(linkText = "Job")
+	private WebElement jobMenuButton;
+	
+	@FindBy(linkText = "Salary")
+	private WebElement salaryMenuButton;
+	
+	@FindBy(linkText = "Report-to")
+	private WebElement reportsToMenuButton;
+	
+	@FindBy(linkText = "Qualifications")
+	private WebElement qualificationsMenuButton;
+	
+	@FindBy(xpath = "Memberships")
+	private WebElement membershipsMenuButton;
+	
+	
+	public PIMAddEmployye_PersonalDetailsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+	}
+
+	public WebElement getNationalityDropdown() {
+		return nationalityDropdown;
+	}
+
+	public WebElement getMartialStatusDropdown() {
+		return martialStatusDropdown;
+	}
+
+	public WebElement getGenderMaleRadioButton() {
+		return genderMaleRadioButton;
+	}
+
+	public WebElement getGenderFemaleRadioButton() {
+		return genderFemaleRadioButton;
+	}
+
+	public WebElement getSavePersonalDetailsButton() {
+		return savePersonalDetailsButton;
+	}
+
+	public WebElement getBloodTypeDropdown() {
+		return bloodTypeDropdown;
+	}
+
+	public WebElement getTestFieldTextBox() {
+		return testFieldTextBox;
+	}
+
+	public WebElement getSaveCustomFieldsButton() {
+		return saveCustomFieldsButton;
+	}
+
+	public WebElement getAddDocumentsButton() {
+		return addDocumentsButton;
+	}
+
+	public WebElement getContactDetailsMenuButton() {
+		return contactDetailsMenuButton;
+	}
+
+	public WebElement getEmergencyContactMenuButton() {
+		return EmergencyContactMenuButton;
+	}
+
+	public WebElement getDependentsMenuButton() {
+		return dependentsMenuButton;
+	}
+
+	public WebElement getImmigrationMenuButton() {
+		return immigrationMenuButton;
+	}
+
+	public WebElement getJobMenuButton() {
+		return jobMenuButton;
+	}
+
+	public WebElement getSalaryMenuButton() {
+		return salaryMenuButton;
+	}
+
+	public WebElement getReportsToMenuButton() {
+		return reportsToMenuButton;
+	}
+
+	public WebElement getQualificationsMenuButton() {
+		return qualificationsMenuButton;
+	}
+
+	public WebElement getMembershipsMenuButton() {
+		return membershipsMenuButton;
 	}
 
 	public WebElement getPersonalDetailsPage() {

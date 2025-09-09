@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PIMConfiguration_OptionalFieldsPage_Locators {
+public class PIMConfiguration_OptionalFieldsPage {
 
 	@FindBy(xpath = "//div[@class='orangehrm-card-container']")
 	private WebElement optionalFieldsPage;
@@ -26,7 +26,7 @@ public class PIMConfiguration_OptionalFieldsPage_Locators {
 	@FindBy(xpath = "//button[.=' Save ']")
 	private WebElement saveButton;
 
-	public PIMConfiguration_OptionalFieldsPage_Locators(WebDriver driver) {
+	public PIMConfiguration_OptionalFieldsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 

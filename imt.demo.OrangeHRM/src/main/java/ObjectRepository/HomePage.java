@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage_Locators {
+public class HomePage {
 
 	@FindBy(xpath = "//p[@class='oxd-userdropdown-name']")
 	private WebElement logoutProfile;
@@ -87,7 +87,7 @@ public class HomePage_Locators {
 		return orangeHrmLink;
 	}
 
-	public HomePage_Locators(WebDriver driver) {
+	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 

@@ -3,7 +3,7 @@ package ObjectRepository;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PIMConfiguration_CustomFieldsPage_Locators {
+public class PIMConfiguration_CustomFieldsPage {
 	@FindBy(xpath = "//div[@class='orangehrm-container']")
 	private WebElement customFieldsPageTable;
 	

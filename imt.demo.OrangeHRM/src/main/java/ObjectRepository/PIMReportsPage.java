@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PIMReportsPage_Locators {
+public class PIMReportsPage {
 
 	@FindBy(xpath = "//input[@placeholder='Type for hints...']")
 	private WebElement reportNameFilterTextField;
@@ -34,7 +34,7 @@ public class PIMReportsPage_Locators {
 	@FindBy(xpath = "//i[@class='oxd-icon bi-file-text-fill']")
 	private WebElement viewReportFromTable;
 
-	public PIMReportsPage_Locators(WebDriver driver) {
+	public PIMReportsPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 

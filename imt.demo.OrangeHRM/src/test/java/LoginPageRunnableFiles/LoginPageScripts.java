@@ -9,10 +9,10 @@ import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import ObjectRepository.HomePage_Locators;
-import ObjectRepository.PIMAddEmployye_PersonalDetailsPage_Locators;
-import ObjectRepository.PIM_AddEmployeePage_Locators;
-import ObjectRepository.PIM_EmployeeListPage_Locators;
+import ObjectRepository.HomePage;
+import ObjectRepository.PIMAddEmployye_PersonalDetailsPage;
+import ObjectRepository.PIM_AddEmployeePage;
+import ObjectRepository.PIM_EmployeeListPage;
 import imt.demo.OrangeHRM.GenricLibrary.BaseClass;
 import imt.demo.OrangeHRM.GenricLibrary.FileUtility;
 import imt.demo.OrangeHRM.GenricLibrary.ListnersClass;
@@ -33,8 +33,8 @@ public class LoginPageScripts extends BaseClass {
 	public static String EmployeeId1;
 	@Test(groups = "Smoke",dependsOnMethods = "login")
 	public void createEmployee() throws EncryptedDocumentException, IOException, InterruptedException {
-		HomePage_Locators hp = new HomePage_Locators(driver);
-		PIM_EmployeeListPage_Locators pimhome = new PIM_EmployeeListPage_Locators(driver);
+		HomePage hp = new HomePage(driver);
+		PIM_EmployeeListPage pimhome = new PIM_EmployeeListPage(driver);
 		WebElement dashboardMenu = hp.getDashboardMenu();
 		Assert.assertTrue(dashboardMenu.isDisplayed());
 		sutil.explicitWait(driver, hp.getPimMenu());
@@ -43,14 +43,14 @@ public class LoginPageScripts extends BaseClass {
 		Assert.assertTrue(addEmployeeButton.isDisplayed());
 		sutil.explicitWaitClick(driver, pimhome.getAddEmployeeButton());
 		pimhome.getAddEmployeeButton().click();
-		PIM_AddEmployeePage_Locators addemp = new PIM_AddEmployeePage_Locators(driver);
+		PIM_AddEmployeePage addemp = new PIM_AddEmployeePage(driver);
 		String firstName = file.readExcelData("EmployeeData", 1, 0);
 		String lastName = file.readExcelData("EmployeeData", 1, 2);
 		String employeeId = file.readExcelData("EmployeeData", 1, 3);
 		String uploadPhoto = sutil.Upload(ipathConstants.profilePhoto);
 		EmployeeId1 = addemp.getEmployeeIdTextField().getAttribute("value");
 		addemp.createEmployee(firstName, lastName, employeeId, uploadPhoto);
-		PIMAddEmployye_PersonalDetailsPage_Locators editDetails = new PIMAddEmployye_PersonalDetailsPage_Locators(driver);
+		PIMAddEmployye_PersonalDetailsPage editDetails = new PIMAddEmployye_PersonalDetailsPage(driver);
 		WebElement personalDetailsPage = editDetails.getPersonalDetailsPage();
 		sutil.explicitWait(driver, personalDetailsPage);
 		Assert.assertTrue(personalDetailsPage.isDisplayed());
@@ -58,13 +58,29 @@ public class LoginPageScripts extends BaseClass {
 
 	@Test(groups = "Smoke",dependsOnMethods = "createEmployee")
 	public void searchCreatedEmployee() throws InterruptedException {
-		HomePage_Locators hp = new HomePage_Locators(driver);
+		HomePage hp = new HomePage(driver);
 		hp.getPimMenu().click();
-		PIM_EmployeeListPage_Locators elist = new PIM_EmployeeListPage_Locators(driver);
+		PIM_EmployeeListPage elist = new PIM_EmployeeListPage(driver);
 		WebElement employeeListTable = elist.getEmployeeListTable();
 		sutil.explicitWait(driver, employeeListTable);
 		Assert.assertTrue(employeeListTable.isDisplayed());
 		elist.searchEmployee(EmployeeId1);
-		
+	}
+	
+	@Test(dependsOnMethods = "searchCreatedEmployee")
+	public void editEmployee() {
+		HomePage hp = new HomePage(driver);
+		hp.getPimMenu().click();
+		PIM_EmployeeListPage elist = new PIM_EmployeeListPage(driver);
+		WebElement employeeListTable = elist.getEmployeeListTable();
+		sutil.explicitWait(driver, employeeListTable);
+		Assert.assertTrue(employeeListTable.isDisplayed());
+		elist.searchEmployee(EmployeeId1);
+		sutil.explicitWaitClick(driver, employeeListTable);
+		elist.getEditProfileFromTable().click();
+		PIMAddEmployye_PersonalDetailsPage addemp = new PIMAddEmployye_PersonalDetailsPage(driver);
+		sutil.explicitWaitClick(driver, addemp.getContactDetailsMenuButton());
+		addemp.getContactDetailsMenuButton().click();	
+
 	}
 }

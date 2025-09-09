@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PIM_AddEmployeePage_Locators {
+public class PIM_AddEmployeePage {
 	
 	@FindBy(name = "firstName")
 	private WebElement firstNametextField;
@@ -46,7 +46,7 @@ public class PIM_AddEmployeePage_Locators {
 	@FindBy(xpath = "//input[@type='file']")
 	private WebElement uploadProfileButton;
 
-	public PIM_AddEmployeePage_Locators(WebDriver driver) {
+	public PIM_AddEmployeePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 

@@ -14,8 +14,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import ObjectRepository.HomePage_Locators;
-import ObjectRepository.LoginPage_Locators;
+import ObjectRepository.HomePage;
+import ObjectRepository.LoginPage;
 
 public class BaseClass {
 	public static WebDriver driver;
@@ -38,7 +38,7 @@ public class BaseClass {
 
 	@BeforeMethod
 	public void loginPage() throws IOException {
-		LoginPage_Locators lp = new LoginPage_Locators(driver);
+		LoginPage lp = new LoginPage(driver);
 		FileUtility file = new FileUtility();
 		String Username = file.getPropertyFile("username");
 		String Password = file.getPropertyFile("password");
@@ -48,7 +48,7 @@ public class BaseClass {
 
 	@AfterMethod
 	public void logout() {
-		HomePage_Locators hp = new HomePage_Locators(driver);
+		HomePage hp = new HomePage(driver);
 		sutil.implicitWait(driver);
 		hp.logout();
 	}

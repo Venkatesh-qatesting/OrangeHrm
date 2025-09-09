@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PIM_EmployeeListPage_Locators {
+public class PIM_EmployeeListPage {
 
 	@FindBy(xpath = "//span[.='Configuration ']")
 	private WebElement configurationDropdown;
@@ -106,7 +106,7 @@ public class PIM_EmployeeListPage_Locators {
 	@FindBy(xpath = "//div[@class='oxd-table orangehrm-employee-list']")
 	private WebElement listOfEmployees;
 	
-	public PIM_EmployeeListPage_Locators(WebDriver driver) {
+	public PIM_EmployeeListPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
